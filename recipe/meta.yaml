@@ -22,9 +22,9 @@ requirements:
 
   run:
     - python
-    - decorator ==4.0.11
-    - imageio ==2.1.2
-    - tqdm ==4.11.2
+    - decorator >=4.0.2,<5.0
+    - imageio >=2.1.2,<3.0
+    - tqdm >=4.11.2,<5.0
     - numpy
     - ffmpeg
 
