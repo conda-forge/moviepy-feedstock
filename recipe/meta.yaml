@@ -1,6 +1,6 @@
 {% set name = "moviepy" %}
-{% set version = "0.2.3.2" %}
-{% set sha256 = "c733967656fa4be4c37ec48af72b63ab2991455aa862321437a013705797c4ab" %}
+{% set version = "0.2.3.4" %}
+{% set sha256 = "d374864f5eaf4acaf0e6ac837620d29c5d9815bd5c2d48dc24066ae9fcc1b0d0" %}
 
 package:
   name: {{ name|lower }}
