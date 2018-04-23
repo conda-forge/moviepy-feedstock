@@ -1,6 +1,6 @@
 {% set name = "moviepy" %}
-{% set version = "0.2.3.3" %}
-{% set sha256 = "8fc772a1d5f3b8a90a6cf08ad681b0bf2cf3f1ad6a6af4a5730a7e5db08fc280" %}
+{% set version = "0.2.3.4" %}
+{% set sha256 = "d374864f5eaf4acaf0e6ac837620d29c5d9815bd5c2d48dc24066ae9fcc1b0d0" %}
 
 package:
   name: {{ name|lower }}
@@ -13,12 +13,13 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
 
   run:
     - python
