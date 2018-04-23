@@ -1,6 +1,6 @@
 {% set name = "moviepy" %}
-{% set version = "0.2.3.2" %}
-{% set sha256 = "c733967656fa4be4c37ec48af72b63ab2991455aa862321437a013705797c4ab" %}
+{% set version = "0.2.3.3" %}
+{% set sha256 = "8fc772a1d5f3b8a90a6cf08ad681b0bf2cf3f1ad6a6af4a5730a7e5db08fc280" %}
 
 package:
   name: {{ name|lower }}
@@ -22,9 +22,9 @@ requirements:
 
   run:
     - python
-    - decorator ==4.0.11
-    - imageio ==2.1.2
-    - tqdm ==4.11.2
+    - decorator >=4.0.2,<5.0
+    - imageio >=2.1.2,<3.0
+    - tqdm >=4.11.2,<5.0
     - numpy
     - ffmpeg
 
