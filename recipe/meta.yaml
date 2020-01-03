@@ -25,7 +25,7 @@ requirements:
     - python
     - decorator >=4.0.2,<5.0
     - imageio >=2.5,<3.0
-    - imegio-ffmpeg >=0.2.0
+    - imageio-ffmpeg >=0.2.0
     - tqdm >=4.11.2,<5.0
     - numpy
     - requests >=2.8.1,<3.0
