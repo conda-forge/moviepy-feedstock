@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install --no-deps --ignore-installed .
 
@@ -47,7 +47,7 @@ test:
 
   requires:
     - coveralls
-    - matplotlib ==2.0.0
+    - matplotlib-base ==2.0.0
     - nose
     - pytest >=2.8.0
     - pytest-cov
