@@ -1,6 +1,6 @@
 {% set name = "moviepy" %}
-{% set version = "1.0.1" %}
-{% set sha256 = "9d5b0a0e884c0eb92c431baa110e560059720aab15d2ef3e4cba3892c34cf1ed" %}
+{% set version = "1.0.2" %}
+{% set sha256 = "00591a8a5288d323c45a49538dce2cf3ed4211b8cbf63e05c7c2a4c66a175c2a" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
