@@ -1,6 +1,6 @@
 {% set name = "moviepy" %}
-{% set version = "1.0.1" %}
-{% set sha256 = "9d5b0a0e884c0eb92c431baa110e560059720aab15d2ef3e4cba3892c34cf1ed" %}
+{% set version = "1.0.3" %}
+{% set sha256 = "2884e35d1788077db3ff89e763c5ba7bfddbd7ae9108c9bc809e7ba58fa433f5" %}
 
 package:
   name: {{ name|lower }}
@@ -10,20 +10,24 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    # https://github.com/Zulko/moviepy/pull/1565#issuecomment-1064173265
+    # Patch is not python 2 safe
+    - unpin_decorator.patch
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - pip
 
   run:
-    - python
-    - decorator >=4.0.2,<5.0
+    - python >=3.6
+    - decorator >=4.0.2,<6.0
     - imageio >=2.5,<3.0
     - imageio-ffmpeg >=0.2.0
     - tqdm >=4.11.2,<5.0
