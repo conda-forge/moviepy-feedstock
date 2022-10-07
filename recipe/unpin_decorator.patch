@@ -21,7 +21,7 @@ index 277276c..a889b8c 100644
 -            func_code = f.__code__ # Python 3
 -            
 -        names = func_code.co_varnames
-+        names = inspect.getfullargspec(func).args
++        names = inspect.getfullargspec(f).args
          new_a = [fun(arg) if (name in varnames) else arg
                   for (arg, name) in zip(a, names)]
          new_kw = {k: fun(v) if k in varnames else v
@@ -35,7 +35,7 @@ index 277276c..a889b8c 100644
 -        func_code = f.__code__ # Python 3
 -        
 -    names = func_code.co_varnames[1:]
-+    names = inspect.getfullargspec(func).args[1:]
++    names = inspect.getfullargspec(f).args[1:]
      
      new_a = [fun(arg) if (name=='fps') else arg
               for (arg, name) in zip(a, names)]
