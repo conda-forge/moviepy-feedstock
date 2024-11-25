@@ -1,6 +1,6 @@
 {% set name = "moviepy" %}
-{% set version = "1.0.3" %}
-{% set sha256 = "2884e35d1788077db3ff89e763c5ba7bfddbd7ae9108c9bc809e7ba58fa433f5" %}
+{% set version = "2.1.1" %}
+{% set sha256 = "0210336944fcc88a1841fe7ca3701f8f449eead222f9d1665d11d3b8fa753454" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     # https://github.com/Zulko/moviepy/pull/1565#issuecomment-1064173265
@@ -16,12 +16,12 @@ source:
     - unpin_decorator.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python >=3.6
     - pip
 
