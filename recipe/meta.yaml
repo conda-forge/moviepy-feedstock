@@ -38,13 +38,11 @@ test:
     - moviepy
     - moviepy.audio
     - moviepy.audio.fx
-    - moviepy.audio.fx.all
     - moviepy.audio.io
     - moviepy.audio.tools
     - moviepy.video
     - moviepy.video.compositing
     - moviepy.video.fx
-    - moviepy.video.fx.all
     - moviepy.video.io
     - moviepy.video.tools
   commands:
