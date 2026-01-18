@@ -17,9 +17,10 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python {{ python_min }}
     - pip
+    - setuptools
 
   run:
     - python >={{ python_min }}
