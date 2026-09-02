@@ -17,10 +17,11 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3996&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/moviepy-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/moviepy-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/moviepy-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -43,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `moviepy` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install moviepy
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install moviepy
 ```
 
-It is possible to list all of the versions of `moviepy` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add moviepy
+# for installing globally
+pixi global install moviepy
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `moviepy` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search moviepy --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search moviepy --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search moviepy --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -79,6 +122,8 @@ mamba repoquery whoneeds moviepy --channel conda-forge
 # List dependencies of `moviepy`:
 mamba repoquery depends moviepy --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
